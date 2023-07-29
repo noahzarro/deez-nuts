@@ -1,0 +1,67 @@
+<head>
+    <title>
+        Deez Nuts
+    </title>
+    <style>
+        body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        }
+
+        .container {
+        /* Optional: If you want to limit the width of the centered content */
+        max-width: 600px;
+        }
+
+        .centered-content {
+        }
+    </style>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function() {
+        // Get references to the image and audio elements
+        const clickImage = document.getElementById("clickImage");
+
+        const sound_long = document.getElementById("sound_long");
+        const sound_ha = document.getElementById("sound_ha");
+        const sound_haha = document.getElementById("sound_haha");
+        const sound_nuts = document.getElementById("sound_nuts");
+        const sound_got_em = document.getElementById("sound_got_em");
+
+        let sounds = [sound_long, sound_ha, sound_haha, sound_nuts, sound_got_em]
+        
+        // Add a click event listener to the image
+        clickImage.addEventListener("click", function() {
+            // Play the sound when the image is clicked
+            const randomIndex = Math.floor(Math.random() * sounds.length);
+            let sound = sounds[randomIndex];
+            sound.play();
+        });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+    <div class="centered-content">
+      <img id="clickImage" src="static/deez_nuts.jpg" style="border-radius: 10%;">
+    </div>
+    <audio id="sound_long">
+        <source src="static/deez_nuts_long.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound_ha">
+        <source src="static/deez_nuts_ha.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound_haha">
+        <source src="static/haha.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound_nuts">
+        <source src="static/deez_nuts.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="sound_got_em">
+        <source src="static/got_em.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+</body>
